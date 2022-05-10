@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js.js"></script>
+</head>
+<body>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="js.js">
+<link rel="stylesheet" href="Home.html">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+<div class="center">
+    <div class="form">
+      <div class="form-element">
+          <h5>Email:</h5>
+          <label for="email-field"><input type="email" id="email-field" required></label>
+          <h5>Password:</h5>
+          <label for="password-field"></label><input type="password" id="password-field" required>
+          <button id="create" onclick="create()">Create Account</button>
+            <div class="password-policies">
+                <div class="policy-length">
+                    8 characters
+                </div>
+                <div class="policy-number">
+                    contains number
+                </div>
+                <div class="policy-uppercase">
+                    contains uppercase
+                </div>
+                <div class="policy-special">
+                    contains special characters
+                </div>
+                <label>
+                    <input type="checkbox" onclick="myFunction()">
+                </label ><h6>Show Password</h6>
+             </div>
+      </div>
+    </div>
+  </div>
+<!--suppress RegExpSimplifiable -->
+<script>
+
+//Show password code
+    function myFunction() {
+        const x = document.getElementById("password-field");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+
+// return fields
+    function _id(name) {
+        return document.getElementById(name)
+    }
+
+    function _class(name) {
+        return document.getElementsByClassName(name)
+    }
+
+    //-------------------
+
+//To highlight mentioned policies
+    _id("password-field").addEventListener("blur",function (){
+        _class("password-policies")[0].classList.add("active");
+    });
+
+    -_id("password-field").addEventListener("keyup", function (){
+        let password = _id("password-field").value;
+
+
+//Policies
+
+        if (/[A-Z]/.test(password)) {
+            _class("policy-uppercase")[0].classList.add("active");
+        } else {
+            _class("policy-uppercase")[0].classList.remove("active");
+
+        }
+        if (/\d/.test(password)) {
+            _class("policy-number")[0].classList.add("active");
+        } else {
+            _class("policy-number")[0].classList.remove("active");
+
+        }
+        if (/[^A-ZA-Z0-9]/.test(password)) {
+            _class("policy-special")[0].classList.add("active");
+        } else {
+            _class("policy-special")[0].classList.remove("active");
+
+        }
+        if (password.length >= 8) {
+            _class("policy-length")[0].classList.add("active");
+        } else {
+            _class("policy-length")[0].classList.remove("active");
+
+        }
+    });
+
+//Mandatory password makeup
+    
+    _id("password-field").addEventListener("click", function (){
+        _class("create")[0].classList.add("active");
+    });
+
+    _id("create").addEventListener('click',function (){
+        let password = document.getElementById("password-field").value;
+
+        if(/[A-Z]/ && /\d/ .test(password)){
+            _class("policy-uppercase")[0].classList.add("active");
+            _class("policy-number")[0].classList.add("active");
+
+            location.href = "Captcha.html";
+        }else{
+            alert("Password is not strong");
+        }
+    });
+
+</script>
+</body>
+</html>

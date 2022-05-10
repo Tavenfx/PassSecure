@@ -1,0 +1,156 @@
+body {
+    background-image: url("wall (2).jpg");
+    font-family: "Times New Roman", serif;
+}
+
+h5 {
+    color: white;
+}
+
+#create{
+    outline: none;
+    padding: 10px;
+    margin-top: 5px;
+    opacity: 1;
+    border-radius: 50px;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form {
+    width: 250px;
+}
+
+.form .form-element {
+    position: relative;
+}
+
+.form .form-element input {
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #888;
+    background: #b4b0b0;
+    box-sizing: border-box;
+    border-radius: 50px;
+    outline: none;
+    text-indent: 10px;
+}
+
+.form .form-element h6 {
+    padding-top: 0;
+}
+
+.form .form-element .password-policies {
+    margin-top: 5px;
+    position: relative;
+    top: 5px;
+    left: 50px;
+    width: 110%;
+    transform: translateX(-20%);
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    box-sizing: border-box;
+    opacity: 1;
+    overflow: hidden;
+    tansition:  height 30ms ease-in-out,
+                opacity 300ms ease-in-out;
+}
+
+.form .form-element .password-policies > div {
+    margin: 15px 10px;
+    font-weight: 600;
+    color: #888;
+}
+
+.form .form-element .password-policies > div.active {
+    color: #111;
+}
+
+
+
+
+
+
+
+
+
+.container {
+    margin-left: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    width: 450px;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+#captchaTxtArea {
+    background: slategray;
+    color: #000000;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    border: 3px solid black;
+    margin-top: 15px;
+    width: 154px;
+}
+
+#CaptchaEnter {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 303px;
+    height: 40px;
+    border: 3px solid black;
+    font-size: 27px;
+}
+
+#CaptchaEnter::placeholder{
+    color: #c5c5c5;
+
+    font-size: 24px;
+    text-align: center;
+}
+
+#refresh_btn {
+    background: #3399ff;
+    width: 150px;
+    height: 35px;
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+#check_btn {
+    background: #66ff99;
+    width: 150px;
+    height: 35px;
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
